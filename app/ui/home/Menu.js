@@ -40,7 +40,7 @@ export default function Menu() {
     <motion.div  initial={{opacity:0.5,scale:0.5,position:'absolute',top:'50%'}} animate={{opacity:1,scale:1}} transition={{duration:3,ease:'easeInOut'}}>
  
       <div style={{display:'flex'}}>
-        <CardMenu></CardMenu>
+        <CardMenu img='/vision_img.png' titulo='Vision'></CardMenu>
         <CardMenu></CardMenu>
         <CardMenu></CardMenu>
       </div>
