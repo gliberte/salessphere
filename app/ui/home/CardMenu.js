@@ -1,39 +1,81 @@
 import Image from "next/image";
 import styled from "styled-components";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
+import { squada_one } from "../fonts";
 
 const Elemento = styled(motion.div)`
-  width:200px;
-  
-  
+  width: 200px;
+  position: relative;
+
   /* background-color:rgb(120, 144, 156); */
   /* background-image: ${(props) => `url(${props.img})`}; */
-  background-color: rgba(38, 50, 56,0.4);
-  background-size:cover;
-  background-blend-mode:darken;
-  padding:0 0 10px 0;
+  background-color: rgba(38, 50, 56, 0.4);
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 0 0 10px 0;
   transition: all ease-in-out 0.2s;
 
-  span{
+  span {
     top: 0;
     position: absolute;
     color: red;
     font-family: "Francois One";
-    font-size:1.5rem;
-    transform:translateY(-10px) translateX(-20px) rotate(-20deg);
+    font-size: 1.5rem;
+    transform: translateY(-10px) translateX(-20px) rotate(-20deg);
   }
-  :hover{
+  /* :hover{
     transform:scale3d(1.3,1.3,2);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   }
- 
+  */
 `;
-export default function CardMenu({img,titulo}) {
-    return (
-        <Elemento>
 
-            <Image src={img} width={300} height={150}></Image>
-            <span>{titulo}</span>
-        </Elemento>
-    )
+const Contenido = styled(motion.div)`
+  text-align: center;
+  color: aliceblue;
+  padding: 12px 5px 12px 5px;
+  background-color: rgba(33, 33, 33,0.6);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  &:hover {
+    color: rgb(253, 216, 53);
+  }
+`;
+const Container = styled(motion.div)`
+ width: 350px;
+ height: 175px;
+`;
+export default function CardMenu({ img, titulo,descripcion }) {
+  return (
+    <Container
+      whileHover={{
+        scale: 1.3,
+        cursor: "pointer",
+        transition: 1,
+        boxShadow:
+          "rgba(50, 50, 93, 0.35) 0px 50px 100px -20px,rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",
+      }}
+    >
+      <Elemento
+        style={{
+          backgroundImage: `url(${img})`,
+          width: "100%",
+          height: "100%",
+        }}
+        
+      >
+
+        <span>{titulo}</span>
+      </Elemento>
+      <Contenido className={squada_one.className}>
+        <h3>{titulo}</h3>
+      </Contenido>
+
+
+      <Contenido>
+        {descripcion}
+      </Contenido>
+   
+    </Container>
+  );
 }
