@@ -34,18 +34,15 @@ const Elemento = styled(motion.div)`
   }
  
 `;
-
 export default function Menu() {
-
   return (
     <motion.div style={{width:'60%'}}  initial={{opacity:0,scale:0.5,position:'absolute',top:'50%',left:'50%',translateX:'-50%'}} animate={{opacity:1,scale:1,translateX:'-50%',translateY:'-50%'}} transition={{duration:2,ease:'easeInOut'}}>
  
-      <div style={{display:'flex',justifyContent:'space-between',alignContent:'space-between'}}>
+      <div style={{display:'flex',gap:'20px',flexWrap:'wrap',alignContent:'space-between'}}>
         <CardMenu img='/vision_img.png' titulo='Vision' descripcion='Obtén una vision nacional del estado de venta en cada cliente registrado.'>
-        
         </CardMenu>
         <CardMenu img='/cobertura_img.jpg' titulo='Coberturas' descripcion='Coberturas, potencial y volumen de ventas por polígonos de rutas.'></CardMenu>
-        <CardMenu img='/ventas_img.png' titulo='Indices de Ventas' descripcion='Ventas por marcas consolidadas por regiones politico-administrativas y datos censales'></CardMenu>
+        <CardMenu img='/ventas_img.png' titulo='Ventas' descripcion='Ventas por marcas consolidadas por regiones politico-administrativas y datos censales'></CardMenu>
       </div>
     </motion.div>
   );

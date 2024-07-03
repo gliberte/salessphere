@@ -32,50 +32,57 @@ const Elemento = styled(motion.div)`
 
 const Contenido = styled(motion.div)`
   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: aliceblue;
   padding: 12px 5px 12px 5px;
-  background-color: rgba(33, 33, 33,0.6);
+  background-color: rgba(33, 33, 33, 0.6);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  &:hover {
+  h3 {
+    font-size: 2rem;
     color: rgb(253, 216, 53);
+    &:hover {
+      
+      font-size: 2.4rem;
+    }
   }
+
+  transition: all 0.5s ease-in-out;
 `;
 const Container = styled(motion.div)`
- width: 350px;
- height: 175px;
+  width: 350px;
+  height: 500px;
 `;
-export default function CardMenu({ img, titulo,descripcion }) {
+export default function CardMenu({ img, titulo, descripcion, anuncio }) {
   return (
     <Container
       whileHover={{
         scale: 1.3,
         cursor: "pointer",
         transition: 1,
+        zIndex: 999,
         boxShadow:
           "rgba(50, 50, 93, 0.35) 0px 50px 100px -20px,rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",
       }}
     >
       <Elemento
         style={{
-          backgroundImage: `url(${img})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${img})`,
           width: "100%",
           height: "100%",
+          position: "relative",
         }}
-        
       >
-
-        <span>{titulo}</span>
+        <span>{anuncio}</span>
+        <Contenido className={squada_one.className}>
+          <h3>{titulo}</h3>
+          <p>{descripcion}</p>
+        </Contenido>
+        {/* <Contenido>{descripcion}</Contenido> */}
       </Elemento>
-      <Contenido className={squada_one.className}>
-        <h3>{titulo}</h3>
-      </Contenido>
-
-
-      <Contenido>
-        {descripcion}
-      </Contenido>
-   
     </Container>
   );
 }
