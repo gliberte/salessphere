@@ -52,6 +52,7 @@ const Contenido = styled(motion.div)`
 
   transition: all 0.5s ease-in-out;
 `;
+
 const Container = styled(motion.div)`
   width: 350px;
   height: 500px;
@@ -66,15 +67,20 @@ export default function CardMenu({ img, titulo, descripcion, anuncio }) {
         zIndex: 999,
         boxShadow:
           "rgba(50, 50, 93, 0.35) 0px 50px 100px -20px,rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",
+          
       }}
     >
       <Elemento
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${img})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(${img})`,
           width: "100%",
           height: "100%",
           position: "relative",
         }}
+        whileHover={{
+          backgroundImage: `url(${img})`,
+        }}
+        
       >
         <span>{anuncio}</span>
         <Contenido className={squada_one.className}>
