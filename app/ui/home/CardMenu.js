@@ -2,6 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { squada_one } from "../fonts";
+import {useRouter} from 'next/navigation'
 
 const Elemento = styled(motion.div)`
   width: 200px;
@@ -57,9 +58,11 @@ const Container = styled(motion.div)`
   width: 350px;
   height: 500px;
 `;
-export default function CardMenu({ img, titulo, descripcion, anuncio }) {
+export default function CardMenu({ img, titulo, descripcion, anuncio,url }) {
+  const router = useRouter();
   return (
     <Container
+    onClick={()=>router.push(url)}
       whileHover={{
         scale: 1.3,
         cursor: "pointer",
