@@ -36,7 +36,7 @@ const Elemento = styled(motion.div)`
 `;
 export default function Menu() {
   return (
-    <motion.div style={{width:'60%'}}  initial={{opacity:0,scale:0.5,position:'absolute',top:'50%',left:'50%',translateX:'-50%'}} animate={{opacity:1,scale:1,translateX:'-50%',translateY:'-50%'}} transition={{duration:1,ease:'easeInOut'}}>
+    <motion.div style={{width:'60%'}}  initial={{opacity:0,scale:0.5,position:'absolute',top:'50%',left:'50%',translateX:'-50%'}} animate={{opacity:1,scale:1,translateX:'-50%',translateY:'-50%'}} transition={{duration:0.5,ease:'easeInOut'}}>
  
       <div style={{display:'flex',gap:'20px',flexWrap:'wrap',alignContent:'space-between'}}>
         <CardMenu img='/vision2.png' titulo='Vision' descripcion='Obtén una vision nacional del estado de venta en cada cliente registrado.' url='/vision'>

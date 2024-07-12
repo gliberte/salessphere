@@ -10,14 +10,18 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.7.3",
+    "@supabase/supabase-js": "^2.44.3",
     "@vercel/postgres": "^0.9.0",
+    "autoprefixer": "^10.4.19",
     "framer-motion": "^11.2.12",
     "mapbox-gl": "^3.3.0",
     "next": "14.2.4",
+    "postcss": "^8.4.39",
     "react": "^18",
     "react-dom": "^18",
     "react-text-transition": "^3.1.0",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "tailwindcss": "^3.4.4"
   },
   "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }
